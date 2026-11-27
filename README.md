@@ -143,4 +143,3 @@ src/
 - Log aktivitas dan riwayat grafik hanya disimpan di memori; hilang saat halaman dimuat ulang.
 - Aksi **Semua ON** langsung menulis ke 8 relay tanpa dialog konfirmasi.
 - Latensi TX yang ditampilkan adalah durasi tulis terakhir yang sebenarnya, bukan angka acak.
-- Analisis teknis lengkap ada di [`ANALISIS.md`](./ANALISIS.md).
