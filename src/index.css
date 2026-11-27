@@ -38,6 +38,13 @@
   --scroll-track: #0a0d12;
   --scroll-thumb: #2c3749;
   --scroll-thumb-hover: #404e66;
+
+  --ambient: 0.34;
+  --glass-panel: 0.42;
+  --glass-highlight: rgb(255 255 255 / 0.10);
+  --glass-shadow: 0 10px 30px -18px rgb(0 0 0 / 0.9);
+  --scrim: 0 0 0;
+  --scrim-alpha: 0.6;
 }
 
 html.light {
@@ -74,11 +81,26 @@ html.light {
   --scroll-track: #eef2f7;
   --scroll-thumb: #c2ccdb;
   --scroll-thumb-hover: #8b9bb4;
+
+  --ambient: 0.26;
+  --glass-panel: 0.55;
+  --glass-highlight: rgb(255 255 255 / 0.7);
+  --glass-shadow: 0 8px 24px -18px rgb(15 23 42 / 0.45);
+  --scrim: 15 23 42;
+  --scrim-alpha: 0.32;
 }
 
 @layer base {
   body {
-    @apply bg-industrial-950 text-slate-200 min-h-screen overflow-x-hidden;
+    @apply text-slate-200 min-h-screen overflow-x-hidden;
+    /* Ambient light behind the glass panels. Fixed so panels blur it on scroll. */
+    background-color: rgb(var(--industrial-950));
+    background-image:
+      radial-gradient(55% 45% at 12% 6%, rgb(var(--cyber-cyan) / var(--ambient)), transparent 66%),
+      radial-gradient(45% 40% at 88% 18%, rgb(var(--cyber-cyan) / var(--ambient)), transparent 68%),
+      radial-gradient(60% 50% at 55% 62%, rgb(var(--cyber-green) / var(--ambient)), transparent 72%),
+      radial-gradient(45% 35% at 18% 98%, rgb(var(--cyber-cyan) / var(--ambient)), transparent 70%);
+    background-attachment: fixed;
   }
 
   /* One visible focus style for every control. */
@@ -95,11 +117,13 @@ html.light {
 
 @layer components {
   .panel {
-    @apply bg-industrial-900 border border-industrial-800 rounded-xl overflow-hidden;
+    @apply backdrop-blur-xl border border-industrial-800/80 rounded-xl overflow-hidden;
+    background-color: rgb(var(--industrial-900) / var(--glass-panel));
+    box-shadow: inset 0 1px 0 var(--glass-highlight), var(--glass-shadow);
   }
 
   .panel-head {
-    @apply flex flex-wrap items-center justify-between gap-2 px-4 py-3 border-b border-industrial-800;
+    @apply flex flex-wrap items-center justify-between gap-2 px-4 py-3 border-b border-industrial-800/70;
   }
 
   .panel-title {
@@ -115,7 +139,7 @@ html.light {
   }
 
   .btn-ghost {
-    @apply border-industrial-700 bg-industrial-850 text-slate-200 hover:bg-industrial-800 hover:text-slate-100;
+    @apply border-industrial-700 bg-industrial-850/60 text-slate-200 hover:bg-industrial-800 hover:text-slate-100;
   }
 
   .btn-primary {
@@ -131,7 +155,7 @@ html.light {
   }
 
   .icon-btn {
-    @apply inline-flex items-center justify-center h-[38px] w-[38px] rounded-md border border-industrial-700 bg-industrial-850 text-slate-300 transition-colors hover:bg-industrial-800 hover:text-slate-100;
+    @apply inline-flex items-center justify-center h-[38px] w-[38px] rounded-md border border-industrial-700 bg-industrial-850/60 text-slate-300 transition-colors hover:bg-industrial-800 hover:text-slate-100;
   }
 
   .chip {
@@ -155,7 +179,7 @@ html.light {
   }
 
   .field {
-    @apply w-full min-h-[40px] rounded-md border border-industrial-700 bg-industrial-950 px-3 text-xs text-slate-100 font-mono placeholder:text-slate-400 focus:border-cyber-cyan;
+    @apply w-full min-h-[40px] rounded-md border border-industrial-700 bg-industrial-950/60 px-3 text-xs text-slate-100 font-mono placeholder:text-slate-400 focus:border-cyber-cyan;
   }
 
   .field-label {
@@ -164,6 +188,10 @@ html.light {
 
   .tap {
     @apply inline-flex items-center justify-center;
+  }
+
+  .scrim {
+    background-color: rgb(var(--scrim) / var(--scrim-alpha));
   }
 }
 

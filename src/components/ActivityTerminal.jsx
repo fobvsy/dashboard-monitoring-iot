@@ -111,7 +111,7 @@ export default function ActivityTerminal({
             aria-pressed={filter === tab}
             className={`tap px-2.5 py-1 min-h-[44px] sm:min-h-[32px] rounded text-[11px] font-mono transition-colors ${
               filter === tab
-                ? 'bg-industrial-800 text-slate-100 font-semibold'
+                ? 'bg-industrial-800/80 text-slate-100 font-semibold'
                 : 'text-slate-400 hover:text-slate-200'
             }`}
           >

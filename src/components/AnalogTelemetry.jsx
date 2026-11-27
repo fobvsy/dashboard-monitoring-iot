@@ -46,7 +46,7 @@ function ArcGauge({
   };
 
   return (
-    <div className="rounded-lg border border-industrial-800 bg-industrial-950 p-3">
+    <div className="rounded-lg border border-industrial-800/70 bg-industrial-950/50 p-3">
       <div className="flex items-center justify-between gap-2">
         <div className="flex items-center gap-2 min-w-0">
           <span className="font-mono text-[10px] text-slate-400 shrink-0">{id}</span>
@@ -112,7 +112,7 @@ function ArcGauge({
       </div>
 
       {isEditing && (
-        <div className="mt-2 p-2.5 rounded-md bg-industrial-900 border border-industrial-700 space-y-2">
+        <div className="mt-2 p-2.5 rounded-md bg-industrial-900/70 backdrop-blur-md border border-industrial-700 space-y-2">
           <div>
             <label htmlFor={`${id}-name`} className="field-label">Nama label</label>
             <input
@@ -178,7 +178,7 @@ function LevelBar({ id, name, unit, value, color }) {
         </span>
       </div>
       <div
-        className="h-2.5 w-full bg-industrial-950 rounded-full border border-industrial-800 overflow-hidden"
+        className="h-2.5 w-full bg-industrial-950/60 rounded-full border border-industrial-800/70 overflow-hidden"
         role="progressbar"
         aria-label={name}
         aria-valuemin={0}

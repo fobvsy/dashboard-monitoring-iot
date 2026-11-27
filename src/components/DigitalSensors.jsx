@@ -55,8 +55,8 @@ export default function DigitalSensors({
               key={key}
               className={`rounded-lg border p-3 transition-colors ${
                 isActive
-                  ? 'bg-cyber-cyan/[0.06] border-cyber-cyan/40'
-                  : 'bg-industrial-950 border-industrial-800'
+                  ? 'bg-cyber-cyan/[0.10] border-cyber-cyan/40'
+                  : 'bg-industrial-950/50 border-industrial-800/70'
               }`}
             >
               <div className="flex items-center justify-between gap-2">
@@ -98,7 +98,7 @@ export default function DigitalSensors({
                       }}
                       aria-label={`Nama ${key}`}
                       autoFocus
-                      className="w-full min-w-0 text-xs bg-industrial-900 border border-cyber-cyan rounded px-2 py-1 text-slate-100"
+                      className="w-full min-w-0 text-xs bg-industrial-900/70 border border-cyber-cyan rounded px-2 py-1 text-slate-100"
                     />
                     <button
                       type="button"

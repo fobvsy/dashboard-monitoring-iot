@@ -24,10 +24,10 @@ export default function QuickStats({
   return (
     <section
       aria-label="Ringkasan status"
-      className="grid grid-cols-2 lg:grid-cols-4 gap-px rounded-xl border border-industrial-800 bg-industrial-800 overflow-hidden"
+      className="grid grid-cols-2 lg:grid-cols-4 gap-px rounded-xl border border-industrial-800/80 bg-industrial-800/60 backdrop-blur-xl overflow-hidden"
     >
       {/* Relay count */}
-      <div className="bg-industrial-900 px-4 py-3 min-w-0">
+      <div className="bg-industrial-900/60 px-4 py-3 min-w-0">
         <p className="text-[11px] text-slate-400">Relay aktif</p>
         <p className="mt-1 font-mono text-xl text-slate-100">
           {activeRelayCount}
@@ -46,7 +46,7 @@ export default function QuickStats({
       </div>
 
       {/* Gauge 1 */}
-      <div className="bg-industrial-900 px-4 py-3 min-w-0">
+      <div className="bg-industrial-900/60 px-4 py-3 min-w-0">
         <div className="flex items-start justify-between gap-2">
           <p className="text-[11px] text-slate-400 truncate">{gauge1Cfg?.name || 'Gauge 1'}</p>
           <span className={`chip ${g1Status.className} shrink-0`}>{g1Status.label}</span>
@@ -61,7 +61,7 @@ export default function QuickStats({
       </div>
 
       {/* Gauge 2 */}
-      <div className="bg-industrial-900 px-4 py-3 min-w-0">
+      <div className="bg-industrial-900/60 px-4 py-3 min-w-0">
         <div className="flex items-start justify-between gap-2">
           <p className="text-[11px] text-slate-400 truncate">{gauge2Cfg?.name || 'Gauge 2'}</p>
           <span className={`chip ${g2Status.className} shrink-0`}>{g2Status.label}</span>
@@ -76,7 +76,7 @@ export default function QuickStats({
       </div>
 
       {/* Log buffer */}
-      <div className="bg-industrial-900 px-4 py-3 min-w-0">
+      <div className="bg-industrial-900/60 px-4 py-3 min-w-0">
         <p className="text-[11px] text-slate-400">Log aktivitas</p>
         <p className="mt-1 font-mono text-xl text-slate-100">
           {logCount}

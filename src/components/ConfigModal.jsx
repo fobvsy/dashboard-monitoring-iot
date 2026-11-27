@@ -55,14 +55,14 @@ export default function ConfigModal({
 
   return (
     <div
-      className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80"
+      className="fixed inset-0 z-50 flex items-center justify-center p-4 scrim backdrop-blur-sm"
       onClick={onClose}
     >
       <div
         role="dialog"
         aria-modal="true"
         aria-labelledby="config-title"
-        className="bg-industrial-900 border border-industrial-700 w-full max-w-xl max-h-[90vh] rounded-lg shadow-xl overflow-y-auto"
+        className="bg-industrial-900/90 backdrop-blur-xl border border-industrial-700 w-full max-w-xl max-h-[90vh] rounded-lg shadow-xl overflow-y-auto"
         onClick={(e) => e.stopPropagation()}
       >
         <div className="flex items-start justify-between gap-3 px-5 py-4 border-b border-industrial-800">
@@ -165,7 +165,7 @@ export default function ConfigModal({
               mengubah relay. Pakai hanya di lab atau jaringan lokal. Untuk produksi, aktifkan
               Firebase Auth dan batasi rules per path.
             </p>
-            <pre className="mt-2 p-2 rounded bg-industrial-900 border border-industrial-800 text-[10px] font-mono text-cyber-green overflow-x-auto">
+            <pre className="mt-2 p-2 rounded bg-industrial-900/70 border border-industrial-800/70 text-[10px] font-mono text-cyber-green overflow-x-auto">
 {`{
   "rules": {
     ".read": true,

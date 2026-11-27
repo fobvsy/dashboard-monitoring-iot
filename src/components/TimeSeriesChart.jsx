@@ -84,7 +84,7 @@ export default function TimeSeriesChart({
             value={dataPointsLimit}
             onChange={(e) => setDataPointsLimit(Number(e.target.value))}
             aria-label="Jumlah sampel yang ditampilkan"
-            className="min-h-[44px] sm:min-h-[34px] bg-industrial-950 border border-industrial-700 text-slate-300 font-mono text-[11px] rounded-md px-2 focus:border-cyber-cyan"
+            className="min-h-[44px] sm:min-h-[34px] bg-industrial-950/60 border border-industrial-700 text-slate-300 font-mono text-[11px] rounded-md px-2 focus:border-cyber-cyan"
           >
             <option value={20}>20 sampel</option>
             <option value={30}>30 sampel</option>

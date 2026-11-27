@@ -4,9 +4,9 @@
 - **Personality:** Precision engineering, mission-critical industrial telemetry, high-reliability control room.
 - **Mood:** Focused, cyber-physical, confident, dark-mode first, high information density with zero clutter.
 - **Anti-Slop Directives:** 
-  - No generic gradient mesh or purple-hazed blobs.
+  - No purple-hazed blobs or decorative gradient mesh. Ambient light is cyan/emerald only and lives behind the surfaces, never as content.
   - No fake AI-dashboard rounded cartoon cards.
-  - Crisp border lines (`border-industrial-800`), deep tactile slate/black backgrounds (`#0a0d12` to `#161c26`).
+  - Crisp hairline borders over translucent glass surfaces, on a deep slate/black base (`#0a0d12` to `#161c26`).
   - Colors are functional signals, not decoration:
     - **Emerald (`#10b981`)**: Online, Relay Active, Closed Circuit, Normal range.
     - **Cyan (`#06b6d4`)**: Telemetry stream, RX incoming data, Primary sensor readout.
@@ -34,8 +34,9 @@ ENERGY 2 / RHYTHM 2 / MOTION 1
 
 ## Usage Discipline
 - **Color is state, never decoration.** Cyan = live telemetry, emerald = on/normal, amber = demo/warning, rose = error/offline, indigo = system/config events.
-- **Glow:** one live status dot maximum. No glow on cards, buttons, icons, or borders.
-- **Background:** flat `industrial-950`. No grid or blueprint pattern.
+- **Glow:** ambient light sits behind the panels, never on them. No glow on cards, buttons, icons, or borders; one live status dot maximum.
+- **Background:** `industrial-950` with fixed cyan/emerald ambient gradients; panels float on it as frosted glass. No grid or blueprint pattern.
+- **Surface:** panels use `backdrop-blur-xl` at 42% (dark) / 55% (light) opacity, a hairline border and a 1px top highlight. Nested cards stay at 50% so the ambient light carries through. Text must stay at 4.5:1 or better over the brightest tint.
 - **Radius scale:** panels `12px`, inner cards `8px`, controls `6px`, chips `4px`. Deliberate hierarchy, not everything pill-shaped.
 - **Type:** panel titles are sentence case sans. Monospace only for channel keys, values, timestamps, and latency. No wide-tracked uppercase headings.
 - **One primary action per screen** (Firebase config). Destructive actions are outlined in rose and require confirmation.
@@ -47,4 +48,5 @@ ENERGY 2 / RHYTHM 2 / MOTION 1
 - **One token set, two values.** Every surface and text color is a CSS variable (`--industrial-*`, `--slate-*`, `--cyber-*`); components keep the same Tailwind classes. Charts read `--chart-*` and `--signal-*` so SVG strokes follow the theme.
 - **Light is not inverted dark.** Borders, elevation and text hierarchy stay the same; only the values change.
 - The choice persists in `localStorage('scada-theme')` and is applied before first paint. The default stays dark: the product is a control room, not the OS preference.
+- Glass tuning lives in three tokens: `--ambient` (ambient light strength), `--glass-panel` (panel opacity), `--scrim-alpha` (modal veil). Change them there, not per component.
 

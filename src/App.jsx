@@ -298,7 +298,7 @@ export default function App() {
   }
 
   return (
-    <div className="min-h-screen bg-industrial-950 text-slate-200 flex flex-col">
+    <div className="min-h-screen text-slate-200 flex flex-col">
 
       <a
         href="#main"
@@ -401,7 +401,7 @@ export default function App() {
 
       </main>
 
-      <footer className="border-t border-industrial-800 bg-industrial-900/50 py-3 px-4 text-center text-[11px] font-mono text-slate-400">
+      <footer className="border-t border-industrial-800/80 bg-industrial-900/40 backdrop-blur-md py-3 px-4 text-center text-[11px] font-mono text-slate-400">
         IoT SCADA Control Center · Firebase Realtime Database
         {isDemoMode && <span className="text-cyber-amber"> · data simulasi</span>}
       </footer>

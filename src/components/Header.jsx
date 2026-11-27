@@ -33,14 +33,14 @@ function ResetConfirmDialog({ onConfirm, onCancel }) {
 
   return createPortal(
     <div
-      className="fixed inset-0 z-[9999] flex items-center justify-center p-4 bg-black/70"
+      className="fixed inset-0 z-[9999] flex items-center justify-center p-4 scrim backdrop-blur-sm"
       onClick={onCancel}
     >
       <div
         role="dialog"
         aria-modal="true"
         aria-labelledby="reset-dialog-title"
-        className="bg-industrial-900 border border-industrial-700 rounded-lg shadow-xl max-w-sm w-full p-5"
+        className="bg-industrial-900/90 backdrop-blur-xl border border-industrial-700 rounded-lg shadow-xl max-w-sm w-full p-5"
         onClick={(e) => e.stopPropagation()}
       >
         <div className="flex items-start gap-3">
@@ -115,13 +115,13 @@ export default function Header({
   }, [theme]);
 
   return (
-    <header className="border-b border-industrial-800 bg-industrial-950/95 backdrop-blur-sm md:sticky md:top-0 z-30">
+    <header className="border-b border-industrial-800/80 bg-industrial-950/70 backdrop-blur-xl md:sticky md:top-0 z-30">
       <div className="mx-auto max-w-[1440px] px-3 sm:px-4 lg:px-6">
         <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4 py-2.5">
 
           {/* Brand */}
           <div className="flex items-center gap-2.5 sm:mr-auto min-w-0">
-            <div className="h-8 w-8 rounded-md bg-industrial-850 border border-industrial-700 grid place-items-center text-cyber-cyan shrink-0">
+            <div className="h-8 w-8 rounded-md bg-industrial-850/60 border border-industrial-700 grid place-items-center text-cyber-cyan shrink-0">
               <Cpu className="w-4 h-4" />
             </div>
             <div className="min-w-0">
